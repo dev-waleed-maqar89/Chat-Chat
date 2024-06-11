@@ -1,0 +1,241 @@
+@import "bootstrap";
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #44aa;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #66a4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #55a6;
+}
+
+.navbar-container {
+    position: sticky;
+    top: 0;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.main-navbar, .chat-navbar {
+    list-style: none;
+    height: 100%;
+    background-color: #88f;
+    display: grid;
+    align-items: center;
+}
+
+.main-navbar {
+    grid-template-columns: repeat(auto-fill, 100px);
+    border-right: 1px solid #aaf;
+}
+
+.chat-navbar {
+    grid-template-columns: repeat(auto-fill, 200px);
+}
+
+.navbar-link {
+    all: unset;
+    height: 80%;
+    cursor: pointer;
+}
+
+.navbar-link.active {
+    color: #44F;
+    border-bottom: 2px solid #44F;
+    font-weight: 800;
+}
+
+.form-error {
+    background-color: #8ff6;
+    width: 40%;
+    padding: 5px;
+    font-weight: 700;
+}
+
+.main-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.no-current-chat-image, .no-conversation-image {
+    width: 40%;
+}
+
+.conversains-list {
+    max-height: 100vh;
+    padding: 5px;
+    overflow-y: auto;
+    border: 1px solid #aaf;
+}
+
+.single-chat-header {
+    cursor: pointer;
+    padding-left: 5%;
+    display: grid;
+    grid-template-areas: "s-pic s-info"
+        "s-pic m-body";
+    grid-template-columns: 1fr 7fr;
+    height: 80px;
+    background-color: #88c;
+    border: 1px solid #aaf5;
+}
+
+.single-chat-header:hover, .single-chat-header.current {
+    background-color: #aaf;
+}
+
+.single-chat-sender-image {
+    grid-area: s-pic;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.single-chat-sender-info {
+    grid-area: s-info;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin-left: 10%;
+}
+
+.single-chat-sender-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.single-chat-message-body {
+    grid-area: m-body;
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+}
+
+.single-chat-last-message {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.users-container {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    max-height: 80vh;
+    width: 40%;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #77a;
+}
+
+.single-user-card {
+    cursor: pointer;
+}
+
+.single-user-card .single-user-card-link {
+    all: unset;
+    color: white;
+    background-color: #88e2;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.single-user-card .single-user-card-link:hover {
+    background-color: #88e8;
+}
+
+.chat-message-received, .chat-message-sent {
+    clear: both;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    max-width: 40%;
+}
+
+.chat-message-received {
+    float: left;
+    background-color: #77a;
+}
+
+.chat-message-sent {
+    float: right;
+    background-color: #5588;
+}
+
+.current-chat-sender-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.current-chat-navbar-image {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.current-conversation {
+    height: 100vh;
+    padding-top: 5px;
+    /* width: 95%; */
+}
+
+.current-chat-message-read {
+    color: #7f78;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.current-conversation-messages-container {
+    max-height: 80%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.chat-new-message-form, .chat-waiting-for-acceptance {
+    position: fixed;
+    bottom: 0;
+    width: 75%;
+}
+
+.chat-waiting-for-acceptance {
+    bottom: 5%;
+}
+
+.chat-new-message-form .form-group {
+
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+}
+
+.single-chat-user-name::after {
+    content: "";
+    float: right;
+    margin-top: 20px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.single-chat-user-name.offline::after {
+    background-color: #777;
+}
+
+.single-chat-user-name.online::after {
+    background-color: #5f5;
+}
